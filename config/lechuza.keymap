@@ -10,7 +10,6 @@
 
 #define LOWER 1
 #define UPPER 2
-#define SYS 3
 
 / {
 	keymap {
@@ -22,14 +21,14 @@
 // |  [  |  Q  |  W  |  E  |  R  |  T  |                          |  Y  |  U  |  I  |  O  |  P  |  ]  |
 // | TAB |  A  |  S  |  D  |  F  |  G  |-----,              ,-----|  H  |  J  |  K  |  L  |  ;  |  '  |
 // | SFT |  Z  |  X  |  C  |  V  |  B  |GESC |-----,  ,-----|  \  |  N  |  M  |  ,  |  .  |  /  | SFT |
-// '-----------------| LA  |LOWER| BSP | CTL | GUI |  | RET | RA  |  _  |UPPER| SYS |-----------------'
+// '-----------------| LA  |LOWER| BSP | CTL | GUI |  | RET | RA  |  _  |UPPER| CAPS|-----------------'
 //                   '-----------------------------'  '-----------------------------'
 			bindings = <
 &kp EQUAL   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                                                      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS
 &kp LBKT    &kp Q       &kp W       &kp E       &kp R       &kp T                                                       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp RBKT
 &kp TAB     &kp A       &kp S       &kp D       &kp F       &kp G                                                       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT
 &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &gresc     	                        &kp BSLH 	&kp N   	&kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
-                                    &kp LALT    &mo LOWER   &kp BSPC    &kp LCTL    &kp LGUI    &kp RET     &kp RALT    &kp SPC     &mo UPPER  	&mo SYS
+                                    &kp LALT    &mo LOWER   &kp BSPC    &kp LCTL    &kp LGUI    &kp RET     &kp RALT    &kp SPC     &mo UPPER  	&kp CAPS
 			>;
 		};
 
@@ -61,26 +60,9 @@
 			bindings = <
 &none		&kp F1     	&kp F2      &kp F3      &kp F4      &kp F5                                                      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
 &none   	&none  		&kp C_BRI_DEC &none  	&kp C_BRI_UP &none                     			                        &none       &kp LC(LEFT) &kp UP     &kp LC(RIGHT) &kp PSCRN &kp F12
-&kp CAPS  	&none       &kp C_PREV  &kp C_PP    &kp C_NEXT  &none                           	                        &kp HOME    &kp LEFT    &kp DOWN    &kp RIGHT   &kp END     &none
+&none 		&none       &kp C_PREV  &kp C_PP    &kp C_NEXT  &none                           	                        &kp HOME    &kp LEFT    &kp DOWN    &kp RIGHT   &kp END     &none
 &trans   	&none       &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &none     	&trans                              &none       &none       &kp LC(BSPC) &kp INS    &kp LC(DEL) &kp PAUSE_BREAK &trans
                         &trans      &none       &none     	&trans      &trans      &none       &none       &none       &trans      &none
-			>;
-		};
-
-		system_layer {
-// ,-----------------------------------,                          ,-----------------------------------,
-// |     |     |     |     |     |     |                          |     |     |     |     |     |     |
-// |     |     |     |     |     |     |                          |     |     |     |     |     |     |
-// |     |     |     |     |     |     |-----,              ,-----|     |     |     |     |     |     |
-// |     |     |     |     |     |     |     |-----,  ,-----| RST |     |     |     |     |     |     |
-// '-----------------|     |     |     |     |     |  |     |     |     |     |  T  |-----------------'
-//                   '-----------------------------'  '-----------------------------'
-			bindings = <
-&none		&none 		&none 		&none 		&none 		&none	                    		                        &none      	&none      	&none      	&none      	&none     	&none
-&none		&none 		&none 		&none 		&none 		&none                    			                        &none       &none 		&none     	&none 		&none  		&none
-&none       &none       &none       &none    	&none		&none                            	                        &none    	&none    	&none    	&none   	&none     	&none
-&none   	&none       &none 		&none 		&none 		&none     	&none                         		&reset      &none       &none 		&none    	&none 		&none    	&none
-                        &none      	&none       &none      	&none      	&none      	&none       &none       &none      	&none      	&trans
 			>;
 		};
 	};
