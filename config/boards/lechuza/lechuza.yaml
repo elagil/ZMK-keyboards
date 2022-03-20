@@ -1,0 +1,10 @@
+identifier: lechuza
+name: Lechuza
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - switches

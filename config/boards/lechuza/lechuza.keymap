@@ -1,0 +1,87 @@
+/*
+ * Copyright (c) 2022 elagil
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define LOWER 1
+#define UPPER 2
+#define SYS 3
+
+/ {
+	keymap {
+		compatible = "zmk,keymap";
+
+		default_layer {
+// ,-----------------------------------,                          ,-----------------------------------,
+// |  =  |  1  |  2  |  3  |  4  |  5  |                          |  6  |  7  |  8  |  9  |  0  |  -  |
+// |  [  |  Q  |  W  |  E  |  R  |  T  |                          |  Y  |  U  |  I  |  O  |  P  |  ]  |
+// | TAB |  A  |  S  |  D  |  F  |  G  |-----,              ,-----|  H  |  J  |  K  |  L  |  ;  |  '  |
+// | SFT |  Z  |  X  |  C  |  V  |  B  |GESC |-----,  ,-----|  \  |  N  |  M  |  ,  |  .  |  /  | SFT |
+// '-----------------| LA  |LOWER| BSP | CTL | GUI |  | RET | RA  |  _  |UPPER| SYS |-----------------'
+//                   '-----------------------------'  '-----------------------------'
+			bindings = <
+&kp EQUAL   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                                                      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS
+&kp LBKT    &kp Q       &kp W       &kp E       &kp R       &kp T                                                       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp RBKT
+&kp TAB     &kp A       &kp S       &kp D       &kp F       &kp G                                                       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT
+&kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &gresc     	                        &kp BSLH 	&kp N   	&kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
+                                    &kp LALT    &mo LOWER   &kp BSPC    &kp LCTL    &kp LGUI    &kp RET     &kp RALT    &kp SPC     &mo UPPER  	&mo SYS
+			>;
+		};
+
+		lower_layer {
+// ,-----------------------------------,                          ,-----------------------------------,
+// |     | F1  | F2  | F3  | F4  | F5  |                          |  F6 |  F7 |  F8 |  F9 | F10 | F11 |
+// |     |     |     |     |     |     |                          |     |  7  |  8  |  9  |     | F12 |
+// |S-TAB|     |PRETB| DEL |NXTTB|     |-----,              ,-----|  +  |  4  |  5  |  6  |  *  |     |
+// |  T  |     |     |     |     |     |     |-----,  ,-----|     |  -  |  1  |  2  |  3  |  /  |  T  |
+// '-----------------|     |  T  |     |     |     |  |KPENT|     |  0  |     | NLK |-----------------'
+//                   '-----------------------------'  '-----------------------------'
+			bindings = <
+&none		&kp F1     	&kp F2      &kp F3      &kp F4      &kp F5                                                      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
+&none		&none 		&none 		&none 	 	&none 		&none                   			                        &none       &kp KP_N7   &kp KP_N8   &kp KP_N9   &none       &kp F12
+&kp LS(TAB) &none       &kp LC(PG_UP) &kp DEL   &kp LC(PG_DN) &none                           	                        &kp KP_PLUS &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_MULTIPLY &none
+&trans   	&none       &none       &none       &none       &none      &none 		                          &none     &kp KP_MINUS &kp KP_N1  &kp KP_N2   &kp KP_N3  	&kp KP_DIVIDE &trans
+                                    &none  		&trans  	&none      &none      	&none      	&kp KP_ENTER  &none     &kp KP_N0   &none       &kp KP_NLCK
+			>;
+		};
+
+		upper_layer {
+// ,-----------------------------------,                          ,-----------------------------------,
+// |     |  F1 |  F2 |  F3 |  F4 |  F5 |                          |  F6 |  F7 |  F8 |  F9 | F10 | F11 |
+// |     |     | BRID|     | BRIU|     |                          |     | PREV|  UP | NEXT| PRT | F12 |
+// |     |     | PREV| PLAY| NEXT|     |-----,              ,-----| HOME| LEFT| DOWN|RIGHT| END |     |
+// |  T  |     | VOLD| MUTE| VOLU|     |  T  |-----,  ,-----|     |     | DELP| INS | DELN|PAUSE|  T  |
+// '-----------------|  T  |     |     |  T  |     |  |     |     |     |  T  |     |-----------------'
+//                   '-----------------------------'  '-----------------------------'
+			bindings = <
+&none		&kp F1     	&kp F2      &kp F3      &kp F4      &kp F5                                                      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
+&none   	&none  		&kp C_BRI_DEC &none  	&kp C_BRI_UP &none                     			                        &none       &kp LC(LEFT) &kp UP     &kp LC(RIGHT) &kp PSCRN &kp F12
+&kp CAPS  	&none       &kp C_PREV  &kp C_PP    &kp C_NEXT  &none                           	                        &kp HOME    &kp LEFT    &kp DOWN    &kp RIGHT   &kp END     &none
+&trans   	&none       &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &none     	&trans                              &none       &none       &kp LC(BSPC) &kp INS    &kp LC(DEL) &kp PAUSE_BREAK &trans
+                        &trans      &none       &none     	&trans      &trans      &none       &none       &none       &trans      &none
+			>;
+		};
+
+		system_layer {
+// ,-----------------------------------,                          ,-----------------------------------,
+// |     |     |     |     |     |     |                          |     |     |     |     |     |     |
+// |     |     |     |     |     |     |                          |     |     |     |     |     |     |
+// |     |     |     |     |     |     |-----,              ,-----|     |     |     |     |     |     |
+// |     |     |     |     |     |     |BOOT |-----,  ,-----| RST |     |     |     |     |     |     |
+// '-----------------|     |     |     |     |     |  |     |     |     |     |  T  |-----------------'
+//                   '-----------------------------'  '-----------------------------'
+			bindings = <
+&none		&none 		&none 		&none 		&none 		&none	                    		                        &none      	&none      	&none      	&none      	&none     	&none
+&none		&none 		&none 		&none 		&none 		&none                    			                        &none       &none 		&none     	&none 		&none  		&none
+&none       &none       &none       &none    	&none		&none                            	                        &none    	&none    	&none    	&none   	&none     	&none
+&none   	&none       &none 		&none 		&none 		&none     	&bootloader                         &reset      &none       &none 		&none    	&none 		&none    	&none
+                        &none      	&none       &none      	&none      	&none      	&none       &none       &none      	&none      	&trans
+			>;
+		};
+	};
+};

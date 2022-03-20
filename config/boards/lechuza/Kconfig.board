@@ -1,0 +1,8 @@
+# Lechuza board configuration
+
+# Copyright (c) 2022 elagil
+# SPDX-License-Identifier: MIT
+
+config BOARD_LECHUZA
+	bool "Lechuza"
+	depends on SOC_STM32L072XX
