@@ -1,6 +1,10 @@
-# ZMK-config for the Lechuza keyboard
+# ZMK-config for the supporting additional keyboards
+## General
+This repository includes all necessary configuration files, for building the [ZMK firmware](https://zmk.dev/) for additional boards, made by [me](https://github.com/elagil).
+Use this repository as a basis for implementing your own keymap.
 
-The [Lechuza](https://github.com/elagil/lechuza) is a keyboard that is based on the STM32L072 processor. This repository includes all necessary configuration files, for building ZMK for that board.
-Use this repository as a basis for your implementing your own keymap.
+Simply fork the project, and edit the corresponding keymap file in the `config` folder. After pushing, the firmwares will be created as build artifacts by the GitHub pipeline.
 
-Simply fork it, and edit the [keymap file](config/lechuza.keymap) in the `config` folder. After pushing, the firmware will be created as a build artifact by the GitHub pipeline.
+## Keyboards
+- [Wireless Polilla](https://github.com/elagil/PolillaW)
+- [Lechuza](https://github.com/elagil/lechuza)
