@@ -1,6 +1,7 @@
 /*
- * Copyright (c) 2022 elagil
+ * Lechuza board configuration
  *
+ * Copyright (c) 2022 elagil
  * SPDX-License-Identifier: MIT
  */
 
@@ -10,6 +11,17 @@
 
 #define LOWER 1
 #define UPPER 2
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_caps {
+            timeout-ms = <50>;
+            key-positions = <55 56>;
+            bindings = <&kp CAPS>;
+        };
+    };
+};
 
 / {
     keymap {
@@ -28,7 +40,7 @@
 &kp LBKT    &kp Q       &kp W       &kp E       &kp R       &kp T                                                       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp RBKT
 &kp TAB     &kp A       &kp S       &kp D       &kp F       &kp G                                                       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT
 &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &gresc     	                        &kp BSLH 	&kp N   	&kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
-                                    &kp LGUI    &mo LOWER   &kp BSPC    &kp LCTL    &kp LALT    &kp RET     &kp RALT   	&kp SPC     &mo UPPER  	&kp CAPS
+                                    &kp LGUI    &mo LOWER   &kp BSPC    &kp LCTL    &kp LALT    &kp RET     &kp RALT   	&kp SPC     &mo UPPER  	&kp RGUI
             >;
         };
 

@@ -1,3 +1,6 @@
+# Lechuza board configuration
+
+# Copyright (c) 2022 elagil
 # SPDX-License-Identifier: MIT
 
 board_runner_args(dfu-util "--pid=0483:df11" "--alt=0" "--dfuse")

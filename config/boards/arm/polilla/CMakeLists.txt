@@ -1,7 +1,7 @@
-#
-# Copyright (c) 2020 The ZMK Contributors
+# Polilla board configuration
+
+# Copyright (c) 2020 The ZMK contributors
 # SPDX-License-Identifier: MIT
-#
 
 set_property(GLOBAL APPEND PROPERTY extra_post_build_commands
   COMMAND ${PYTHON_EXECUTABLE} ${ZEPHYR_BASE}/../tools/uf2/utils/uf2conv.py

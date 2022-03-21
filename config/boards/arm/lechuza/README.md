@@ -1,6 +1,5 @@
 # Building ZMK for the Lechuza
 
-
 ## Standard Build
 
 ```

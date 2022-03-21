@@ -1,3 +1,8 @@
+# Lechuza board configuration
+
+# Copyright (c) 2022 elagil
+# SPDX-License-Identifier: MIT
+
 file_format: "1"
 id: lechuza
 name: Lechuza

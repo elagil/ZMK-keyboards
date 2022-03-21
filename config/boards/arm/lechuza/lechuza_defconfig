@@ -1,3 +1,6 @@
+# Lechuza board configuration
+
+# Copyright (c) 2022 elagil
 # SPDX-License-Identifier: MIT
 
 CONFIG_BOARD_LECHUZA=y
