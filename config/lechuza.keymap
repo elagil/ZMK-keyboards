@@ -12,15 +12,8 @@
 #define LOWER 1
 #define UPPER 2
 
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_caps {
-            timeout-ms = <50>;
-            key-positions = <55 56>;
-            bindings = <&kp CAPS>;
-        };
-    };
+&caps_word {
+    continue-list = <LSHFT RSHFT BSPC UNDERSCORE MINUS>;
 };
 
 / {
@@ -32,15 +25,15 @@
 // |  =  |  1  |  2  |  3  |  4  |  5  |                          |  6  |  7  |  8  |  9  |  0  |  -  |
 // |  [  |  Q  |  W  |  E  |  R  |  T  |                          |  Y  |  U  |  I  |  O  |  P  |  ]  |
 // | TAB |  A  |  S  |  D  |  F  |  G  |-----,              ,-----|  H  |  J  |  K  |  L  |  ;  |  '  |
-// | SFT |  Z  |  X  |  C  |  V  |  B  |GESC |-----,  ,-----|  \  |  N  |  M  |  ,  |  .  |  /  | SFT |
-// '-----------------| GUI |LOWER| BSP | CTL |  LA |  | RET |  RA |  _  |UPPER| CAP |-----------------'
+// | SFT |  Z  |  X  |  C  |  V  |  B  | GSC |-----,  ,-----|  \  |  N  |  M  |  ,  |  .  |  /  | SFT |
+// '-----------------| ALT |LOWER| BSP | CTL | GUI |  | RET | ALT |  _  |UPPER|CAPSW|-----------------'
 //                   '-----------------------------'  '-----------------------------'
             bindings = <
 &kp EQUAL   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                                                      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS
 &kp LBKT    &kp Q       &kp W       &kp E       &kp R       &kp T                                                       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp RBKT
 &kp TAB     &kp A       &kp S       &kp D       &kp F       &kp G                                                       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT
 &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &gresc     	                        &kp BSLH 	&kp N   	&kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
-                                    &kp LGUI    &mo LOWER   &kp BSPC    &kp LCTL    &kp LALT    &kp RET     &kp RALT   	&kp SPC     &mo UPPER  	&kp RGUI
+                                    &kp LALT    &mo LOWER   &kp BSPC    &kp LCTL    &kp LGUI    &kp RET     &kp RALT   	&kp SPC     &mo UPPER  	&caps_word
             >;
         };
 
