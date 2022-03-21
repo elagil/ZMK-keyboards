@@ -15,10 +15,10 @@
 #define SYS 4
 
 / {
-	keymap {
-		compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-		default_layer {
+        default_layer {
 // ,-----------------------------------,              ,-----------------------------------,
 // |  =  |  1  |  2  |  3  |  4  |  5  |              |  6  |  7  |  8  |  9  |  0  |  -  |
 // |  [  |  Q  |  W  |  E  |  R  |  T  |              |  Y  |  U  |  I  |  O  |  P  |  ]  |
@@ -26,16 +26,16 @@
 // | SFT |  Z  |  X  |  C  |  V  |  B  |GESC |  |  \  |  N  |  M  |  ,  |  .  |  /  | SFT |
 // '-----------|  LA | GUI |LOWER| BSP | CTL |  | RA* | RA_ |UPPER| GUI | BLE |-----------'
 //             '-----------------------------'  '-----------------------------'
-			bindings = <
+            bindings = <
 &kp EQUAL   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                              &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS
 &kp LBKT    &kp Q       &kp W       &kp E       &kp R       &kp T                               &kp Y       &kp U       &kp I       &kp O       &kp P       &kp RBKT
 &kp TAB     &kp A       &kp S       &kp D       &kp F       &kp G                               &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT
 &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &gresc     	&kp BSLH 	&kp N   	&kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
                         &kp LALT    &kp LGUI    &mo LOWER   &kp BSPC    &kp LCTL    &mt RALT RET &kp SPACE  &mo UPPER &kp RGUI  	&mo BLE
-			>;
-		};
+            >;
+        };
 
-		lower_layer {
+        lower_layer {
 // ,-----------------------------------,              ,-----------------------------------,
 // | --- | F1  | F2  | F3  | F4  | F5  |              |  F6 |  F7 |  F8 |  F9 | F10 | F11 |
 // | --- | --- | --- | --- | --- | --- |              | --- |  7  |  8  |  9  | --- | F12 |
@@ -43,16 +43,16 @@
 // |  T  | --- | --- | --- | --- | --- | --- |  |KPENT|  -  |  1  |  2  |  3  |  /  |  T  |
 // '-----------| --- | --- |  T  | --- | --- |  | --- |  0  | --- | --- | NLK |-----------'
 //             '-----------------------------'  '-----------------------------'
-			bindings = <
+            bindings = <
 &none		&kp F1     	&kp F2      &kp F3      &kp F4      &kp F5                              &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
 &none		&none 		&none 		&none 	 	&none 		&none                   			&none       &kp KP_N7   &kp KP_N8   &kp KP_N9   &none       &kp F12
 &kp LS(TAB) &none       &kp LC(PG_UP) &kp DEL   &kp LC(PG_DN) &none                           	&kp KP_PLUS &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_MULTIPLY &none
 &trans   	&none       &none       &none       &none       &none       &none 		&kp KP_ENTER &kp KP_MINUS &kp KP_N1 &kp KP_N2   &kp KP_N3  	&kp KP_DIVIDE &trans
                         &none  		&none  		&trans      &none      	&none      	&none       &kp KP_N0   &none     	&none       &kp KP_NLCK
-			>;
-		};
+            >;
+        };
 
-		upper_layer {
+        upper_layer {
 // ,-----------------------------------,              ,-----------------------------------,
 // | --- |  F1 |  F2 |  F3 |  F4 |  F5 |              |  F6 |  F7 |  F8 |  F9 | F10 | F11 |
 // | --- | --- | BRID| --- | BRIU| --- |              | --- | PREV|  UP | NEXT| PRT | F12 |
@@ -60,16 +60,16 @@
 // |  T  | --- | VOLD| MUTE| VOLU| --- |  T  |  |  T  | --- | DELP| INS | DELN|PAUSE|  T  |
 // '-----------|  T  | --- | --- |  T  |  T  |  | --- | --- |  T  | --- | --- |-----------'
 //             '-----------------------------'  '-----------------------------'
-			bindings = <
+            bindings = <
 &none		&kp F1     	&kp F2      &kp F3      &kp F4      &kp F5                              &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
 &none   	&none  		&kp C_BRI_DEC &none  	&kp C_BRI_UP &none                     			&none       &kp LC(LEFT) &kp UP     &kp LC(RIGHT) &kp PSCRN &kp F12
 &kp CAPS  	&none       &kp C_PREV  &kp C_PP    &kp C_NEXT  &none                           	&kp HOME    &kp LEFT    &kp DOWN    &kp RIGHT   &kp END     &none
 &trans   	&none       &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &none     	&trans      &trans      &none       &kp LC(BSPC) &kp INS    &kp LC(DEL) &kp PAUSE_BREAK &trans
                         &trans      &none       &none     	&trans      &trans      &none       &none       &trans      &none       &none
-			>;
-		};
+            >;
+        };
 
-		bluetooth_layer {
+        bluetooth_layer {
 // ,-----------------------------------,              ,-----------------------------------,
 // |BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |              | --- | --- | --- | --- | --- | TOG |
 // | --- | --- | --- | --- | --- | --- |              | --- | --- | --- | --- | --- | --- |
@@ -77,16 +77,16 @@
 // | --- | --- | --- | --- | --- | --- | --- |  | --- | --- | --- | --- | --- | --- | --- |
 // '-----------| --- | --- | --- | --- | --- |  | --- | --- | --- | --- |  T  |-----------'
 //             '-----------------------------'  '-----------------------------'
-			bindings = <
+            bindings = <
 &bt BT_CLR	&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                    &none      	&none      	&none      	&none      	&none     	&out OUT_TOG
 &none		&none 		&none 		&none 		&none 		&none                    			&none       &none 		&none     	&none 		&none  		&none
 &none       &none       &mo SYS		&none  		&none		&none                            	&none    	&none    	&none    	&none   	&none     	&none
 &none   	&none       &none 		&none 		&none 		&none     	&none 		&none      	&none       &none 		&none    	&none 		&none    	&none
                         &none      	&none       &none      	&none      	&none      	&none       &none       &none      	&none      	&trans
-			>;
-		};
+            >;
+        };
 
-		system_layer {
+        system_layer {
 // ,-----------------------------------,              ,-----------------------------------,
 // | --- | --- | --- | --- | --- | --- |              | --- | --- | --- | --- | --- | --- |
 // | --- | --- | --- | --- | --- | --- |              | --- | --- | --- | --- | --- | --- |
@@ -94,13 +94,13 @@
 // | --- | --- | --- | --- | --- | --- |BOOT |  | RST | --- | --- | --- | --- | --- | --- |
 // '-----------| --- | --- | --- | --- | --- |  | --- | --- | --- | --- |  T  |-----------'
 //             '-----------------------------'  '-----------------------------'
-			bindings = <
+            bindings = <
 &none		&none 		&none 		&none 		&none 		&none	                    		&none      	&none      	&none      	&none      	&none     	&none
 &none		&none 		&none 		&none 		&none 		&none                    			&none       &none 		&none     	&none 		&none  		&none
 &none       &none       &trans  	&none    	&none		&none                            	&none    	&none    	&none    	&none   	&none     	&none
 &none   	&none       &none 		&none 		&none 		&none     	&bootloader &reset      &none       &none 		&none    	&none 		&none    	&none
                         &none      	&none       &none      	&none      	&none      	&none       &none       &none      	&none      	&trans
-			>;
-		};
-	};
+            >;
+        };
+    };
 };
