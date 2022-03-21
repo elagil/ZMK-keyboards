@@ -1,4 +1,4 @@
-# ZMK-config for the supporting additional keyboards
+# Support for additional ZMK keyboards
 ## General
 This repository includes all necessary configuration files, for building the [ZMK firmware](https://zmk.dev/) for additional boards, made by [me](https://github.com/elagil).
 Use this repository as a basis for implementing your own keymap.
