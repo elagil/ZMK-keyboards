@@ -93,6 +93,7 @@
 &pll {
   prediv = <2>;
   mul = <4>;
+  div = <1>;
   clocks = <&clk_hsi>;
   status = "okay";
 };
