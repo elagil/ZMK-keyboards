@@ -91,9 +91,8 @@
 };
 
 &pll {
-  prediv = <2>;
   mul = <4>;
-  div = <1>;
+  div = <2>;
   clocks = <&clk_hsi>;
   status = "okay";
 };
