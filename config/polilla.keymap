@@ -99,7 +99,7 @@
 &none		&none 		&none 		&none 		&none 		&none	                    		&none      	&none      	&none      	&none      	&none     	&none
 &none		&none 		&none 		&none 		&none 		&none                    			&none       &none 		&none     	&none 		&none  		&none
 &none       &none       &trans  	&none    	&none		&none                            	&none    	&none    	&none    	&none   	&none     	&none
-&none   	&none       &none 		&none 		&none 		&none     	&bootloader &reset      &none       &none 		&none    	&none 		&none    	&none
+&none   	&none       &none 		&none 		&none 		&none     	&bootloader &sys_reset  &none       &none 		&none    	&none 		&none    	&none
                         &none      	&none       &none      	&none      	&none      	&none       &none       &none      	&none      	&trans
             >;
         };
