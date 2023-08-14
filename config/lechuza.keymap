@@ -37,14 +37,14 @@
 // ,-----------------------------------,                          ,-----------------------------------,
 // | F12 |  F1 |  F2 |  F3 |  F4 |  F5 |                          |  F6 |  F7 |  F8 |  F9 | F10 | F11 |
 // |     |     | BRID| DEL | BRIU|     |                          |     |  `  |     |     |     |  -  |
-// |S-TAB|     | PREV| PLAY| NEXT|     |-----,              ,-----|  ^  |  &  |  *  |  (  |  )  |  _  |
+// |     |     | PREV| PLAY| NEXT|     |-----,              ,-----|  ^  |  &  |  *  |  (  |  )  |  _  |
 // |  T  |     | VOLD| MUTE| VOLU|     |  T  |-----,  ,-----|     |     |  ~  |     |     |     |  T  |
 // '-----------------|  T  |  T  |  T  |  T  |  T  |  |  T  |  T  |  T  |     |  T  |-----------------'
 //                   '-----------------------------'  '-----------------------------'
             bindings = <
 &kp F12     &kp F1      &kp F2      &kp F3      &kp F4      &kp F5                                                      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
 &none       &none       &kp C_BRI_DEC &kp DEL   &kp C_BRI_UP &none                                                      &none       &kp GRAVE   &none       &none       &none       &kp MINUS
-&kp S(TAB)  &none       &kp C_PREV  &kp C_PP    &kp C_NEXT  &none                                                       &kp CARET   &kp AMPS    &kp STAR    &kp LPAR    &kp RPAR    &kp UNDER
+&none       &none       &kp C_PREV  &kp C_PP    &kp C_NEXT  &none                                                       &kp CARET   &kp AMPS    &kp STAR    &kp LPAR    &kp RPAR    &kp UNDER
 &trans      &none       &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &none      &trans                              &none       &none       &kp TILDE   &kp LT      &kp GT      &none       &trans
                                     &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &none       &trans
             >;
