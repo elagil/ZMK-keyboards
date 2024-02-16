@@ -21,15 +21,15 @@
 // |  =  |  1  |  2  |  3  |  4  |  5  |                          |  6  |  7  |  8  |  9  |  0  |  -  |
 // |  [  |  Q  |  W  |  E  |  R  |  T  |                          |  Y  |  U  |  I  |  O  |  P  |  ]  |
 // | TAB |  A  |  S  |  D  |  F  |  G  |-----,              ,-----|  H  |  J  |  K  |  L  |  ;  |  '  |
-// | SFT |  Z  |  X  |  C  |  V  |  B  | ESC |-----,  ,-----|  \  |  N  |  M  |  ,  |  .  |  /  | SFT |
-// '-----------------| ALT |LOWER| BSP | CTL | GUI |  | RET |RALT | SPC |UPPER| DEL |-----------------'
+// | SFT |  Z  |  X  |  C  |  V  |  B  | ESC |-----,  ,-----|  `  |  N  |  M  |  ,  |  .  |  /  | SFT |
+// '-----------------| ALT |LOWER| BSP | CTL | GUI |  | RET |RALT | SPC |UPPER|  \  |-----------------'
 //                   '-----------------------------'  '-----------------------------'
             bindings = <
 &kp EQUAL   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                                                      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS
 &kp LBKT    &kp Q       &kp W       &kp E       &kp R       &kp T                                                       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp RBKT
 &kp TAB     &kp A       &kp S       &kp D       &kp F       &kp G                                                       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT
-&kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &kp ESC                             &kp BSLH    &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
-                                    &kp LALT    &mo LOWER   &kp BSPC    &kp LCTL    &kp LGUI    &kp RET     &kp RALT    &kp SPC     &mo UPPER   &kp DEL
+&kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &kp ESC                             &kp GRAVE   &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
+                                    &kp LALT    &mo LOWER   &kp BSPC    &kp LCTL    &kp LGUI    &kp RET     &kp RALT    &kp SPC     &mo UPPER   &kp BSLH
             >;
         };
 
