@@ -21,8 +21,9 @@ west flash -d build/lechuza
 From linux, you can also use `dfu-util`
 
 ```
-sudo dfu-util -a 0 -D lechuza-zmk.bin -s 0x08000000
+sudo dfu-util -a 0 -d 0483:df11 -D lechuza-zmk.bin -s 0x08000000:leave
 ```
 
 where `-a 0` specifies the "Altsetting of the DFU Interface by name or by number". The number `0` targets the flash
-memory area. The parameter `-s 0x08000000` is the starting address of the flash memory area to write.
+memory area. The parameter `-s 0x08000000` is the starting address of the flash memory area to write. `leave` exits
+the DFU mode after flashing.
