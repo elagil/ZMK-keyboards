@@ -12,7 +12,4 @@ toolchain:
   - gnuarmemb
   - xtools
 supported:
-  - gpio
-  - usb_device
   - switches
-  - kscan

@@ -5,6 +5,9 @@
 
 if BOARD_LECHUZA
 
+config BOARD
+    default "lechuza"
+
 config ZMK_KEYBOARD_NAME
 	default "Lechuza"
 

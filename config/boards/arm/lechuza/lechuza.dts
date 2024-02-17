@@ -8,6 +8,7 @@
 /dts-v1/;
 #include <st/l0/stm32l072Xz.dtsi>
 #include <st/l0/stm32l072c(b-z)tx-pinctrl.dtsi>
+
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
@@ -82,7 +83,6 @@
 
 		/* Set 6Kb of storage at the end of the 192Kb of flash */
 		storage_partition: partition@2ee00 {
-			label = "storage";
 			reg = <0x0002ee00 0x00001800>;
 		};
 	};
