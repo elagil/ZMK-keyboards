@@ -5,11 +5,14 @@
 
 identifier: lechuza
 name: Lechuza
-type: mcu
+type: keyboard
 arch: arm
 toolchain:
   - zephyr
   - gnuarmemb
   - xtools
 supported:
+  - gpio
+  - usb_device
   - switches
+  - kscan
