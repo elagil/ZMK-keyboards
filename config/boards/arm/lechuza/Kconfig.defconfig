@@ -8,9 +8,6 @@ if BOARD_LECHUZA
 config ZMK_KEYBOARD_NAME
 	default "Lechuza"
 
-config ZMK_USB
-	default y
-
 config ZMK_KSCAN_MATRIX_POLLING
 	default y
 

@@ -8,7 +8,6 @@
 /dts-v1/;
 #include <st/l0/stm32l072Xz.dtsi>
 #include <st/l0/stm32l072c(b-z)tx-pinctrl.dtsi>
-
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
@@ -18,13 +17,12 @@
 	chosen {
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
-		zmk,kscan = &kscan;
-		zmk,matrix_transform = &transform;
+		zmk,kscan = &kscan0;
+		zmk,matrix-transform = &default_transform;
 	};
 
-	kscan: kscan {
+	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
-		label = "KSCAN";
                 diode-direction = "row2col";
 		row-gpios
 			= <&gpioa 4  (GPIO_ACTIVE_HIGH)>
@@ -49,8 +47,8 @@
 			;
 	};
 
-	transform:
-	transform {
+	default_transform:
+	keymap_transform_0 {
 		compatible = "zmk,matrix-transform";
 		rows = <5>;
 		columns = <12>;
