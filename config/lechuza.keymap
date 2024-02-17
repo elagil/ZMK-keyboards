@@ -17,6 +17,13 @@
 };
 
 / {
+    macros {
+        // A code block with a pair of three backticks.
+        ZMK_MACRO(m_code,
+            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp UP>;
+        )
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -40,16 +47,16 @@
         lower_layer {
 // ,-----------------------------------,                          ,-----------------------------------,
 // | F12 |  F1 |  F2 |  F3 |  F4 |  F5 |                          |  F6 |  F7 |  F8 |  F9 | F10 | F11 |
-// |     |     | BRID| DEL | BRIU|     |                          |     |  `  |     |     |     |  -  |
-// |     |     | PREV| PLAY| NEXT|     |-----,              ,-----|  ^  |  &  |  *  |  (  |  )  |  _  |
-// |  T  |     | VOLD| MUTE| VOLU|     |  T  |-----,  ,-----|     |     |  ~  |     |     |     |  T  |
+// |     |     | BRID| DEL | BRIU|     |                          |     |     |     |     |     |     |
+// |     |     | PREV| PLAY| NEXT|     |-----,              ,-----|     |code |     |     |     |     |
+// |  T  |     | VOLD| MUTE| VOLU|     |  T  |-----,  ,-----|     |     |     |     |     |     |  T  |
 // '-----------------|  T  |  T  |  T  |  T  |  T  |  |  T  |  T  |  T  |     |  T  |-----------------'
 //                   '-----------------------------'  '-----------------------------'
             bindings = <
 &kp F12     &kp F1      &kp F2      &kp F3      &kp F4      &kp F5                                                      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
-&none       &none       &kp C_BRI_DEC &kp DEL   &kp C_BRI_UP &none                                                      &none       &kp GRAVE   &none       &none       &none       &kp MINUS
-&none       &none       &kp C_PREV  &kp C_PP    &kp C_NEXT  &none                                                       &kp CARET   &kp AMPS    &kp STAR    &kp LPAR    &kp RPAR    &kp UNDER
-&trans      &none       &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &none      &trans                              &none       &none       &kp TILDE   &kp LT      &kp GT      &none       &trans
+&none       &none       &kp C_BRI_DEC &kp DEL   &kp C_BRI_UP &none                                                      &none       &none       &none       &none       &none       &none
+&none       &none       &kp C_PREV  &kp C_PP    &kp C_NEXT  &none                                                       &none       &m_code     &none       &none       &none       &none
+&trans      &none       &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &none      &trans                              &none       &none       &none       &none       &none       &none       &trans
                                     &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &none       &trans
             >;
         };
@@ -57,15 +64,15 @@
         upper_layer {
 // ,-----------------------------------,                          ,-----------------------------------,
 // | F12 |  F1 |  F2 |  F3 |  F4 |  F5 |                          |  F6 |  F7 |  F8 |  F9 | F10 | F11 |
-// |  =  |     |     |     |     |     |                          | PGUP| PREV|  UP | NEXT| PRT |     |
-// |  +  |  !  |  @  |  #  |  $  |  %  |-----,              ,-----| HOME| LEFT| DOWN|RIGHT| END |     |
+// |     |     |     |     |     |     |                          | PGUP| PREV|  UP | NEXT| PRT |     |
+// |     |     |     |     |     |     |-----,              ,-----| HOME| LEFT| DOWN|RIGHT| END |     |
 // |  T  |     |     |     |     |     |  T  |-----,  ,-----|     | PGDN| DELP| INS | DELN|PAUSE|  T  |
 // '-----------------|  T  |     |  T  |  T  |  T  |  |  T  |  T  |  T  |  T  |  T  |-----------------'
 //                   '-----------------------------'  '-----------------------------'
             bindings = <
 &kp F12     &kp F1      &kp F2      &kp F3      &kp F4      &kp F5                                                      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
-&kp EQUAL   &none       &none       &none       &none       &none                                                       &kp PG_UP   &kp LC(LEFT) &kp UP     &kp LC(RIGHT) &kp PSCRN &none
-&kp PLUS    &kp EXCL    &kp AT      &kp HASH    &kp DOLLAR  &kp PERCENT                                                 &kp HOME    &kp LEFT    &kp DOWN    &kp RIGHT   &kp END     &none
+&none       &none       &none       &none       &none       &none                                                       &kp PG_UP   &kp LC(LEFT) &kp UP     &kp LC(RIGHT) &kp PSCRN &none
+&none       &none       &none       &none       &none       &none                                                       &kp HOME    &kp LEFT    &kp DOWN    &kp RIGHT   &kp END     &none
 &trans      &none       &none       &none       &none       &none       &trans                              &none       &kp PG_DN   &kp LC(BSPC) &kp INS    &kp LC(DEL) &kp PAUSE_BREAK &trans
                                     &trans      &none       &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
             >;
