@@ -5,32 +5,17 @@
 
 if BOARD_POLILLA
 
-config ZMK_KEYBOARD_NAME
+config BOARD
 	default "Polilla"
 
-if USB
+if USB_DEVICE_STACK
 
 config USB_NRFX
 	default y
 
-config USB_DEVICE_STACK
-	default y
-
-endif # USB
+endif # USB_DEVICE_STACK
 
 config BT_CTLR
 	default BT
-
-config ZMK_BLE
-	default y
-
-config ZMK_USB
-	default y
-
-config BOARD_POLILLA_CHARGER
-	default y
-
-config ZMK_BATTERY_VOLTAGE_DIVIDER
-	default y
 
 endif # BOARD_POLILLA
