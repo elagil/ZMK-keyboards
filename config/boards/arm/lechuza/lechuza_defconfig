@@ -3,7 +3,6 @@
 # Copyright (c) 2022 elagil
 # SPDX-License-Identifier: MIT
 
-CONFIG_BOARD_LECHUZA=y
 CONFIG_SOC_SERIES_STM32L0X=y
 CONFIG_SOC_STM32L072XX=y
 
@@ -15,7 +14,6 @@ CONFIG_GPIO=y
 
 # ZMK Settings
 CONFIG_ZMK_USB=y
-CONFIG_ZMK_KSCAN_MATRIX_POLLING=y
 
 # clock configuration
 CONFIG_CLOCK_CONTROL=y
