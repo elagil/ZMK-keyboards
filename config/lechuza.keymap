@@ -13,13 +13,6 @@
 #define UPPER 2
 
 / {
-    macros {
-        // A code block with a pair of three backticks.
-        ZMK_MACRO(m_code,
-            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp UP>;
-        )
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
