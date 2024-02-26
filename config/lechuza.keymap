@@ -69,7 +69,7 @@
 &kp F12     &kp F1      &kp F2      &kp F3      &kp F4      &kp F5                                                      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
 &none       &none       &none       &none       &none       &none                                                       &kp PG_UP   &kp LC(LEFT) &kp UP     &kp LC(RIGHT) &kp PSCRN &none
 &none       &none       &none       &none       &none       &none                                                       &kp HOME    &kp LEFT    &kp DOWN    &kp RIGHT   &kp END     &none
-&trans      &none       &none       &none       &none       &none       &kp LC(LA(DEL))                                 &none       &kp PG_DN   &kp LC(BSPC) &kp INS    &kp LC(DEL) &kp PAUSE_BREAK &trans
+&trans      &none       &none       &none       &none       &none       &kp LC(LA(DEL))                     &none       &kp PG_DN   &kp LC(BSPC) &kp INS    &kp LC(DEL) &kp PAUSE_BREAK &trans
                                     &trans      &none       &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
             >;
         };
