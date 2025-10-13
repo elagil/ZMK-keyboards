@@ -1,19 +1,15 @@
 # Polilla board configuration
 
-# Copyright (c) 2020 elagil
+# Copyright (c) 2025 elagil
 # SPDX-License-Identifier: MIT
 
 if BOARD_POLILLA
 
-config BOARD
+config ZMK_KEYBOARD_NAME
 	default "Polilla"
-
-if USB_DEVICE_STACK
 
 config USB_NRFX
 	default y
-
-endif # USB_DEVICE_STACK
 
 config BT_CTLR
 	default BT

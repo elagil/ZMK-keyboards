@@ -16,6 +16,7 @@
 		zephyr,code-partition = &code_partition;
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
+		zmk,battery = &vbatt0;
 		zmk,kscan = &kscan0;
 		zmk,matrix-transform = &default_transform;
 	};
@@ -59,7 +60,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
 			;
 	};
 
-	vbatt {
+	vbatt0: vbatt {
 		compatible = "zmk,battery-voltage-divider";
 		io-channels = <&adc 2>;
 		output-ohms = <820000>;
@@ -83,47 +84,46 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
 	status = "okay";
 };
 
-&usbd {
-	compatible = "nordic,nrf-usbd";
-	status = "okay";
-	cdc_acm_uart: cdc_acm_uart {
-        compatible = "zephyr,cdc-acm-uart";
-    };
+zephyr_udc0: &usbd {
+    status = "okay";
 };
 
-
 &flash0 {
-	/*
-	 * For more information, see:
-	 * http://docs.zephyrproject.org/latest/devices/dts/flash_partitions.html
-	 */
-	partitions {
-		compatible = "fixed-partitions";
-		#address-cells = <1>;
-		#size-cells = <1>;
+    /*
+     * For more information, see:
+     * http://docs.zephyrproject.org/latest/devices/dts/flash_partitions.html
+     */
+    partitions {
+        compatible = "fixed-partitions";
+        #address-cells = <1>;
+        #size-cells = <1>;
 
-		sd_partition: partition@0 {
-			reg = <0x00000000 0x00026000>;
-		};
-		code_partition: partition@26000 {
-			reg = <0x00026000 0x000c6000>;
-		};
+        sd_partition: partition@0 {
+            label = "softdevice";
+            reg = <0x00000000 0x00026000>;
+        };
+        code_partition: partition@26000 {
+            label = "code_partition";
+            reg = <0x00026000 0x000c6000>;
+        };
 
-		/*
-		 * The flash starting at 0x000ec000 and ending at
-		 * 0x000f3fff is reserved for use by the application.
-		 */
+        /*
+         * The flash starting at 0x000ec000 and ending at
+         * 0x000f3fff is reserved for use by the application.
+         */
 
-		/*
-		 * Storage partition will be used by FCB/LittleFS/NVS
-		 * if enabled.
-		 */
-		storage_partition: partition@ec000 {
-			reg = <0x000ec000 0x00008000>;
-		};
+        /*
+         * Storage partition will be used by FCB/LittleFS/NVS
+         * if enabled.
+         */
+        storage_partition: partition@ec000 {
+            label = "storage";
+            reg = <0x000ec000 0x00008000>;
+        };
 
-		boot_partition: partition@f4000 {
-			reg = <0x000f4000 0x0000c000>;
-		};
-	};
+        boot_partition: partition@f4000 {
+            label = "adafruit_boot";
+            reg = <0x000f4000 0x0000c000>;
+        };
+    };
 };
